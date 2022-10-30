@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  margin-top: 20px;
+  padding: 0 20px;
+  & #main_hamburger {
+    height: 50px;
+    width: 50px;
+    background-image: url("../../../assets/shared/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+  & #main_logo {
+    background-image: url("../../../assets/shared/logo.svg");
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+  }
+  & ul {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    position: fixed;
+
+    & li a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
