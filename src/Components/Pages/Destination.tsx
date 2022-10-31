@@ -1,17 +1,23 @@
 import "../../sass/pages/Destination.scss";
-import mars from "../../assets/destination/image-mars.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { planets } from "../Data";
 
 const Destination = ({ props }: any) => {
   const { isOpen, setOpen } = props;
   const [loaded, setLoaded] = useState<boolean>(false);
+  const [singlePlanet, setSinglePlanet] = useState(planets[0]);
 
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
     }, 500);
   }, []);
+
+  const setPlanet = (nameMatch: string) => {
+    let newPlanet = planets.filter((planet) => planet.name == nameMatch);
+    setSinglePlanet(newPlanet[0]);
+  };
 
   return (
     <div id="destination" className={loaded ? "loaded" : ""}>
@@ -20,27 +26,28 @@ const Destination = ({ props }: any) => {
           <span>01</span>pick your destination
         </p>
         <ul>
-          <li className="active">MOON</li>
-          <li>MARS</li>
-          <li>EUROPA</li>
-          <li>TITAN</li>
+          <li
+            className="active"
+            onClick={(e: any) => setPlanet(e.target.innerText)}
+          >
+            MOON
+          </li>
+          <li onClick={(e: any) => setPlanet(e.target.innerText)}>MARS</li>
+          <li onClick={(e: any) => setPlanet(e.target.innerText)}>EUROPA</li>
+          <li onClick={(e: any) => setPlanet(e.target.innerText)}>TITAN</li>
         </ul>
         <div id="destination_planet">
-          <img src={mars} alt="mars" />
-          <p>MARS</p>
-          <p>
-            Don’t forget to pack your hiking boots. You’ll need them to tackle
-            Olympus Mons, the tallest planetary mountain in our solar system.
-            It’s two and a half times the size of Everest!
-          </p>
+          <img src={singlePlanet.img} alt="mars" />
+          <p>{singlePlanet.name}</p>
+          <p>{singlePlanet.text}</p>
           <div id="destination_planet_about">
             <div id="distance">
               <p>AVG. DISTANCE</p>
-              <p> 225 MIL. KM</p>
+              <p>{singlePlanet.distance}</p>
             </div>
             <div id="travel">
               <p>EST. TRAVEL TIME</p>
-              <p>9 MONTHS</p>
+              <p>{singlePlanet.travel}</p>
             </div>
           </div>
         </div>

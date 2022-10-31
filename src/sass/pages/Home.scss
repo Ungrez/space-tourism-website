@@ -39,8 +39,19 @@
     text-transform: uppercase;
     align-self: center;
     justify-self: flex-end;
+    animation: bounce 1s ease-in-out infinite alternate;
+    border: none;
+    box-shadow: 0 0 14px 0px rgb(34, 31, 31);
   }
   &.loaded {
     opacity: 1;
+  }
+}
+@keyframes bounce {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
   }
 }
