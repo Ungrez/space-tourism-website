@@ -5,4 +5,32 @@
 }
 body {
   z-index: 2;
+  background-color: hsl(226, 43%, 10%);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-spacing: 10px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    animation: loader 3s ease-in-out infinite alternate;
+  }
+}
+@keyframes loader {
+  from {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }

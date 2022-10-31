@@ -3,7 +3,7 @@ import moon from "../../assets/destination/image-moon.png";
 import titan from "../../assets/destination/image-titan.png";
 import europa from "../../assets/destination/image-europa.png";
 
-export const planets: {
+const planets: {
   name: string;
   text: string;
   distance: string;
@@ -39,12 +39,27 @@ export const planets: {
     img: europa,
   },
 ];
-export const Data = (name: string) => {
-  const match = planets.filter((planet) => planet.name === name);
-  return (
-    <div className="destination_planet">
-      <img src={match[0].img} alt={match[0].name} />
-      <div className="planet_about"></div>
-    </div>
-  );
+
+export const checkPlanet = (name: any) => {
+  planets.filter((planet) => {
+    if (planet.name === name) {
+      return (
+        <div id="destination_planet">
+          <p>{planet.name}</p>
+          <img src={planet.img} alt={planet.name} />
+          <p>{planet.text}</p>
+          <div>
+            <div>
+              <p>AVG. DISTANCE</p>
+              <p>{planet.distance}</p>
+            </div>
+            <div>
+              <p>EST. TRAVEL TIME</p>
+              <p>{planet.travel}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  });
 };

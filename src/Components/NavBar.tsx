@@ -4,8 +4,7 @@ import { useReducedMotion, motion } from "framer-motion";
 
 const NavBar = ({ props }: any) => {
   const { isOpen, setOpen } = props;
-  const shouldReduceMotion = useReducedMotion();
-  let animate;
+
   return (
     <nav className="main_nav">
       <div id="main_logo"></div>
