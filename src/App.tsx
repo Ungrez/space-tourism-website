@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sass/main.scss";
 import NavBar from "./Components/NavBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -8,11 +8,13 @@ import Crew from "./Components/Pages/Crew";
 import Technology from "./Components/Pages/Technology";
 
 function App() {
+  const [isOpen, setOpen] = useState<boolean>(false);
+
   return (
     <Router>
-      <NavBar />
+      <NavBar props={{ isOpen, setOpen }} />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home props={{ isOpen, setOpen }} />}></Route>
         <Route path="/destination" element={<Destination />}></Route>
         <Route path="/crew" element={<Crew />}></Route>
         <Route path="/technology" element={<Technology />}></Route>

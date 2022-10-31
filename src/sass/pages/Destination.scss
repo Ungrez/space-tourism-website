@@ -1,0 +1,20 @@
+#destination {
+  background-image: url("../../assets/destination/background-destination-mobile.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15vh 20px 30px 20px;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  & p {
+    font-size: 22px;
+    text-transform: uppercase;
+    & span {
+      margin-right: 10px;
+      color: hsl(0, 0%, 44%);
+    }
+  }
+}

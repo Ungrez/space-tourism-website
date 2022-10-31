@@ -1,7 +1,41 @@
 #main_home {
-  background-image: url("../../../assets/home/background-home-mobile.jpg");
+  background-image: url("../../assets/home/background-home-mobile.jpg");
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 15vh 20px 30px 20px;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  &_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & p:nth-child(1) {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  & p:nth-child(3) {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 100px;
+  }
+  & h1 {
+    text-transform: uppercase;
+    font-size: 72px;
+    font-weight: 300;
+  }
+  & button {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    font-size: 22px;
+    text-transform: uppercase;
+    align-self: center;
+    justify-self: flex-end;
+  }
 }

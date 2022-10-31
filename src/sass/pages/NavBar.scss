@@ -6,37 +6,49 @@ nav {
   position: fixed;
   margin-top: 20px;
   padding: 0 20px;
+  z-index: 2;
   & #main_hamburger {
     height: 50px;
     width: 50px;
-    background-image: url("../../../assets/shared/icon-hamburger.svg");
+    background-image: url("../../assets/shared/icon-hamburger.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
   }
   & #main_logo {
-    background-image: url("../../../assets/shared/logo.svg");
+    background-image: url("../../assets/shared/logo.svg");
     height: 50px;
     width: 50px;
     background-repeat: no-repeat;
   }
   & ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
     list-style: none;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
     height: 50%;
-    width: 50%;
-    flex-direction: row;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    position: fixed;
+    width: 100%;
+    top: 10vh;
+    left: 0;
+    transition: 0.5s;
+    text-align: center;
+
+    &.loaded {
+      display: flex;
+      right: 0;
+    }
+    & li {
+      align-self: center;
+    }
 
     & li a {
+      color: white;
       display: block;
       text-decoration: none;
+      font-size: 26px;
+      line-height: 2;
     }
   }
 }
