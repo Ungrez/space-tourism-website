@@ -1,12 +1,21 @@
-import "../../sass/pages/Destination.scss";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { planets } from "../Data";
+import "../../sass/pages/Destination.scss";
 
 const Destination = ({ props }: any) => {
-  const { isOpen, setOpen } = props;
+  const { isOpen } = props;
   const [loaded, setLoaded] = useState<boolean>(false);
   const [singlePlanet, setSinglePlanet] = useState(planets[0]);
+  const [active, setActive] = useState<number>(-1);
+  const [anim, setAnim] = useState(false);
+
+  const navItems = [
+    { id: 0, target: "MOON" },
+    { id: 1, target: "MARS" },
+    { id: 2, target: "EUROPA" },
+    { id: 3, target: "TITAN" },
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,9 +23,32 @@ const Destination = ({ props }: any) => {
     }, 500);
   }, []);
 
+  const NavLink = ({
+    id,
+    target,
+    isActive,
+    onClick,
+  }: {
+    id: number;
+    target: string;
+    isActive: any;
+    onClick: any;
+  }) => (
+    <p
+      onClick={useCallback(() => onClick(id), [id])}
+      className={isActive ? "active" : ""}
+    >
+      {target}
+    </p>
+  );
+
   const setPlanet = (nameMatch: string) => {
-    let newPlanet = planets.filter((planet) => planet.name == nameMatch);
-    setSinglePlanet(newPlanet[0]);
+    setAnim(true);
+    setTimeout(() => {
+      let newPlanet = planets.filter((planet) => planet.name === nameMatch);
+      setSinglePlanet(newPlanet[0]);
+      setAnim(false);
+    }, 500);
   };
 
   return (
@@ -26,30 +58,46 @@ const Destination = ({ props }: any) => {
           <span>01</span>pick your destination
         </p>
         <ul>
-          <li
-            className="active"
-            onClick={(e: any) => setPlanet(e.target.innerText)}
-          >
-            MOON
-          </li>
-          <li onClick={(e: any) => setPlanet(e.target.innerText)}>MARS</li>
-          <li onClick={(e: any) => setPlanet(e.target.innerText)}>EUROPA</li>
-          <li onClick={(e: any) => setPlanet(e.target.innerText)}>TITAN</li>
+          {navItems.map((item) => (
+            <li
+              key={item.id}
+              onClick={(e: any) => setPlanet(e.target.innerText)}
+            >
+              <NavLink
+                {...item}
+                onClick={setActive}
+                isActive={active === item.id}
+              />
+            </li>
+          ))}
         </ul>
         <div id="destination_planet">
-          <img src={singlePlanet.img} alt="mars" />
-          <p>{singlePlanet.name}</p>
-          <p>{singlePlanet.text}</p>
-          <div id="destination_planet_about">
+          {singlePlanet.img && (
+            <motion.img
+              style={{ right: anim ? "150%" : 0 }}
+              src={singlePlanet.img}
+              alt="mars"
+            />
+          )}
+          <motion.p style={{ opacity: anim ? 0 : 1 }}>
+            {singlePlanet.name}
+          </motion.p>
+          <motion.p style={{ opacity: anim ? 0 : 1 }}>
+            {singlePlanet.text}
+          </motion.p>
+          <motion.div
+            style={{ opacity: anim ? 0 : 1 }}
+            id="destination_planet_about"
+          >
             <div id="distance">
-              <p>AVG. DISTANCE</p>
+              {singlePlanet.distance && <p>AVG. DISTANCE</p>}
               <p>{singlePlanet.distance}</p>
             </div>
             <div id="travel">
-              <p>EST. TRAVEL TIME</p>
+              {singlePlanet.travel && <p>EST. TRAVEL TIME</p>}
               <p>{singlePlanet.travel}</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </div>
