@@ -1,0 +1,21 @@
+#technology {
+  background-image: url("../../assets/technology/background-technology-mobile.jpg");
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  transition: 0.5s;
+  padding: 15vh 20px 30px 20px;
+  text-align: center;
+  color: white;
+  & p {
+    font-size: 22px;
+    text-transform: uppercase;
+    & span {
+      margin-right: 10px;
+      color: hsl(0, 0%, 44%);
+    }
+  }
+  &.loaded {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,64 @@
+#crew {
+  background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  width: 100%;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  padding: 15vh 20px 0 20px;
+  text-align: center;
+  position: relative;
+  transition: 0.5s;
+  opacity: 0;
+  & > p {
+    font-size: 22px;
+    text-transform: uppercase;
+    & span {
+      margin-right: 10px;
+      color: hsl(0, 0%, 44%);
+    }
+  }
+  & .swiper {
+    height: 80vh;
+    width: 100%;
+    & div.swiper-pagination {
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      & span.pagination {
+        background-color: hsl(0, 0%, 44%);
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        &-active {
+          background-color: white;
+        }
+      }
+    }
+  }
+  &_person {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    height: 100%;
+    & img {
+      max-width: 100%;
+      align-self: center;
+      max-height: 350px;
+      box-shadow: 0 -2 24px 2px red;
+    }
+    &_role {
+      font-size: 22px;
+      color: hsl(0, 0%, 76%);
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    &_name {
+      font-size: 32px;
+    }
+  }
+  &.loaded {
+    opacity: 1;
+  }
+}

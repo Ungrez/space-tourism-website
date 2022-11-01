@@ -19,8 +19,11 @@ function App() {
           path="/destination"
           element={<Destination props={{ isOpen }} />}
         ></Route>
-        <Route path="/crew" element={<Crew />}></Route>
-        <Route path="/technology" element={<Technology />}></Route>
+        <Route path="/crew" element={<Crew props={{ isOpen }} />}></Route>
+        <Route
+          path="/technology"
+          element={<Technology props={{ isOpen }} />}
+        ></Route>
       </Routes>
     </Router>
   );
