@@ -23,19 +23,31 @@ const Technology = ({ props }: any) => {
         <p>
           <span>03</span>space launch 101
         </p>
+        <p id="terminology">The terminology...</p>
         <Swiper
           spaceBetween={200}
           pagination={{
             clickable: true,
             bulletClass: "pagination",
             bulletActiveClass: "pagination-active",
+            renderBullet: function (index, className) {
+              return (
+                '<span class="' + className + '">' + (index + 1) + "</span>"
+              );
+            },
           }}
           modules={[Pagination]}
           className="swiper"
         >
-          <SwiperSlide>1</SwiperSlide>
-          <SwiperSlide>1</SwiperSlide>
-          <SwiperSlide>1</SwiperSlide>
+          {technology.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div id="technology_topic">
+                <p id="name">{item.name}</p>
+                <img src={item.images.portrait} alt={item.name} />
+                <p id="desc">{item.description}</p>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </motion.div>
     </div>
