@@ -65,3 +65,80 @@
     opacity: 1;
   }
 }
+@include mq(sm) {
+  #crew {
+    background-image: url("../../assets/crew/background-crew-desktop.jpg");
+    width: 100%;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 25vh 150px 0 150px;
+    text-align: left;
+    position: relative;
+    & .crew_container {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 0 150px 0 150px;
+    }
+    & p:nth-child(1) {
+      font-size: 26px;
+      & span {
+        margin-right: 10px;
+      }
+    }
+    & .swiper {
+      height: 70vh;
+      width: 100%;
+      & div.swiper-pagination {
+        bottom: 10%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        justify-content: flex-start;
+        & span.pagination {
+          background-color: hsl(0, 0%, 44%);
+          cursor: pointer;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          &-active {
+            background-color: white;
+          }
+        }
+      }
+    }
+    &_person {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 0.4fr 1fr 1fr;
+      margin-top: 20px;
+      gap: 10px;
+      height: 100%;
+      & img {
+        align-self: flex-end;
+        max-width: 100%;
+        justify-self: center;
+        max-height: 100%;
+        box-shadow: 0 -2 24px 2px red;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 2;
+      }
+      &_role {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+        align-self: flex-end;
+      }
+      &_name {
+        font-size: 62px;
+      }
+      &_bio {
+        font-size: 22px;
+        font-weight: 300;
+        padding-right: 150px;
+      }
+    }
+  }
+}

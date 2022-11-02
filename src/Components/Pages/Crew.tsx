@@ -18,7 +18,10 @@ const Crew = ({ props }: any) => {
 
   return (
     <div id="crew" className={loaded ? "loaded" : ""}>
-      <motion.div style={{ opacity: isOpen ? 0 : 1 }}>
+      <motion.div
+        className="crew_container"
+        style={{ opacity: isOpen ? 0 : 1 }}
+      >
         <p>
           <span>02 </span> meet your crew
         </p>
