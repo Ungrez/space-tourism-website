@@ -10,21 +10,24 @@ import "swiper/scss/pagination";
 const Technology = ({ props }: any) => {
   const { isOpen } = props;
   const [loaded, setLoaded] = useState<boolean>(false);
+  const desktop = window.innerWidth < 1000;
 
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
+      console.log(desktop);
     }, 500);
   }, []);
 
   return (
     <div id="technology" className={loaded ? "loaded" : ""}>
-      <motion.div style={{ opacity: isOpen ? 0 : 1 }}>
+      <motion.div id="technology_container" style={{ opacity: isOpen ? 0 : 1 }}>
         <p>
           <span>03</span>space launch 101
         </p>
         <p id="terminology">The terminology...</p>
         <Swiper
+          direction={desktop ? "horizontal" : "vertical"}
           spaceBetween={200}
           pagination={{
             clickable: true,
