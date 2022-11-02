@@ -21,12 +21,11 @@ The website is based on the design from frontend mentor. Simple website layout.
 
 ## Screenshots
 
-Mobile
 ![](./src/screenshots/home-mobile.PNG)
 ![](./src/screenshots/destination-mobile.PNG)
 ![](./src/screenshots/crew-mobile.PNG)
 ![](./src/screenshots/technology-mobile.PNG)
-Desktop
+
 ![](./src/screenshots/home-desktop.PNG)
 ![](./src/screenshots/destination-desktop.PNG)
 ![](./src/screenshots/crew-desktop.PNG)
