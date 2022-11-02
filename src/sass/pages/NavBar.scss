@@ -77,6 +77,8 @@ nav {
     top: 5%;
     padding: 0 0 0 40px;
     z-index: 2;
+    transition: 0.3s;
+
     & #main_hamburger {
       display: none;
     }
@@ -97,6 +99,10 @@ nav {
     }
     & #main_logo {
       flex-basis: 20%;
+      transition: 0.5s;
+      &:hover {
+        transform: rotate(25deg);
+      }
     }
     & ul {
       display: flex;

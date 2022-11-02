@@ -53,7 +53,10 @@ const Destination = ({ props }: any) => {
 
   return (
     <div id="destination" className={loaded ? "loaded" : ""}>
-      <motion.div style={{ opacity: isOpen ? 0 : 1 }}>
+      <motion.div
+        className="planet_container"
+        style={{ opacity: isOpen ? 0 : 1 }}
+      >
         <p>
           <span>01</span>pick your destination
         </p>

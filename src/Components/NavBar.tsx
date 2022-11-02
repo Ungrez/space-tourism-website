@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import "../sass/pages/NavBar.scss";
-import { useReducedMotion, motion } from "framer-motion";
 
 const NavBar = ({ props }: any) => {
   const { isOpen, setOpen } = props;
