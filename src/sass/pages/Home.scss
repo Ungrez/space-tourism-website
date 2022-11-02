@@ -1,3 +1,5 @@
+@import "../variables";
+@import "../mixins";
 #main_home {
   background-image: url("../../assets/home/background-home-mobile.jpg");
   width: 100vw;
@@ -31,7 +33,7 @@
     font-size: 72px;
     font-weight: 300;
   }
-  & button {
+  & a button {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -42,6 +44,17 @@
     animation: bounce 1s ease-in-out infinite alternate;
     border: none;
     box-shadow: 0 0 14px 0px rgb(34, 31, 31);
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.093);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: none;
+      transform: scale(1.05);
+    }
   }
   &.loaded {
     opacity: 1;
@@ -53,5 +66,53 @@
   }
   to {
     transform: scale(1.05);
+  }
+}
+
+@include mq(sm) {
+  #main_home {
+    background-image: url("../../assets/home/background-home-desktop.jpg");
+    padding: 15vh 20px 30px 20px;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    background-size: cover;
+    &_desc {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 150px;
+      height: 100%;
+      &_text {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 30%;
+        align-self: flex-end;
+        gap: 20px;
+      }
+      & p:nth-child(1) {
+        font-size: 28px;
+        text-transform: uppercase;
+      }
+      & p:nth-child(3) {
+        font-size: 18px;
+      }
+      & h1 {
+        margin-bottom: 40px;
+        font-size: 150px;
+      }
+      & a {
+        align-self: flex-end;
+      }
+      & a button {
+        height: 300px;
+        width: 300px;
+        font-size: 26px;
+        letter-spacing: 2px;
+
+        margin-bottom: 100px;
+      }
+    }
   }
 }

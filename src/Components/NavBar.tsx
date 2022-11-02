@@ -7,26 +7,32 @@ const NavBar = ({ props }: any) => {
 
   return (
     <nav className="main_nav">
-      <div id="main_logo"></div>
+      <NavLink to="/" end>
+        <div id="main_logo"></div>
+      </NavLink>
       <div
         onClick={() => {
           setOpen(!isOpen);
         }}
         id="main_hamburger"
       ></div>
-      <motion.ul
-        style={{
-          opacity: isOpen ? 1 : 0,
-          pointerEvents: isOpen ? "visible" : "none",
-        }}
-      >
-        <li onClick={() => setOpen(!isOpen)}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/destination">Destination</NavLink>
-          <NavLink to="/crew">Crew</NavLink>
-          <NavLink to="/technology">Technology</NavLink>
+      <div id="line"></div>
+      <ul className={isOpen ? "main_nav_links" : ""}>
+        <li className={isOpen ? "active" : ""} onClick={() => setOpen(false)}>
+          <NavLink to="/" end>
+            <span>00</span> Home
+          </NavLink>
+          <NavLink to="/destination">
+            <span>01</span> Destination
+          </NavLink>
+          <NavLink to="/crew">
+            <span>02</span> Crew
+          </NavLink>
+          <NavLink to="/technology">
+            <span>03</span> Technology
+          </NavLink>
         </li>
-      </motion.ul>
+      </ul>
     </nav>
   );
 };
