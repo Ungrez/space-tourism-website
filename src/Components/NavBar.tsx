@@ -6,7 +6,7 @@ const NavBar = ({ props }: any) => {
 
   return (
     <nav className="main_nav">
-      <NavLink to="/" end>
+      <NavLink to="/space-tourism-website/" end>
         <div id="main_logo"></div>
       </NavLink>
       <div
