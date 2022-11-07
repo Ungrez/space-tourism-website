@@ -21,13 +21,13 @@ const NavBar = ({ props }: any) => {
           <NavLink to="/space-tourism-website/" end>
             <span>00</span> Home
           </NavLink>
-          <NavLink to="space-tourism-website/destination">
+          <NavLink to="/space-tourism-website/destination">
             <span>01</span> Destination
           </NavLink>
-          <NavLink to="space-tourism-website//crew">
+          <NavLink to="/space-tourism-website//crew">
             <span>02</span> Crew
           </NavLink>
-          <NavLink to="space-tourism-website/technology">
+          <NavLink to="/space-tourism-website/technology">
             <span>03</span> Technology
           </NavLink>
         </li>

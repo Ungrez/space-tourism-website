@@ -19,15 +19,15 @@ function App() {
           element={<Home props={{ isOpen }} />}
         ></Route>
         <Route
-          path="space-tourism-website/destination"
+          path="/space-tourism-website/destination"
           element={<Destination props={{ isOpen }} />}
         ></Route>
         <Route
-          path="space-tourism-website/crew"
+          path="/space-tourism-website/crew"
           element={<Crew props={{ isOpen }} />}
         ></Route>
         <Route
-          path="space-tourism-website/technology"
+          path="/space-tourism-website/technology"
           element={<Technology props={{ isOpen }} />}
         ></Route>
       </Routes>
