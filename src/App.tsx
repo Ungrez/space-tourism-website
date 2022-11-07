@@ -14,14 +14,20 @@ function App() {
     <Router>
       <NavBar props={{ isOpen, setOpen }} />
       <Routes>
-        <Route path="/" element={<Home props={{ isOpen }} />}></Route>
         <Route
-          path="/destination"
+          path="/space-tourism-website/"
+          element={<Home props={{ isOpen }} />}
+        ></Route>
+        <Route
+          path="space-tourism-website/destination"
           element={<Destination props={{ isOpen }} />}
         ></Route>
-        <Route path="/crew" element={<Crew props={{ isOpen }} />}></Route>
         <Route
-          path="/technology"
+          path="space-tourism-website/crew"
+          element={<Crew props={{ isOpen }} />}
+        ></Route>
+        <Route
+          path="space-tourism-website/technology"
           element={<Technology props={{ isOpen }} />}
         ></Route>
       </Routes>
