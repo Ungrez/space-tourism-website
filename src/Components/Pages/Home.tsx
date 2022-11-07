@@ -26,7 +26,7 @@ const Home = ({ props }: any) => {
             world experience!
           </p>
         </div>
-        <NavLink to="/destination">
+        <NavLink to="/space-tourism-website/destination">
           <button>Explore</button>
         </NavLink>
       </motion.div>
