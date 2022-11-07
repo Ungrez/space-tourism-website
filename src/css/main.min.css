@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --swiper-theme-color: white !important;
+}
+
+body {
+  background-color: hsl(226deg, 43%, 10%);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+body::before {
+  content: "";
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-spacing: 10px;
+  border-top: 6px solid white;
+  border-right: 6px solid white;
+  -webkit-animation: loader 3s ease-in-out infinite alternate;
+          animation: loader 3s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes loader {
+  from {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  from {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    border-top-right-radius: 0px;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+html,
+body {
+  font-family: "Rubik", sans-serif;
+}/*# sourceMappingURL=main.min.css.map */

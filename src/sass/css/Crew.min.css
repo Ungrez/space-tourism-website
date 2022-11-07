@@ -1,0 +1,142 @@
+#crew {
+  background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  width: 100%;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  padding: 15vh 20px 0 20px;
+  text-align: center;
+  position: relative;
+  transition: 0.5s;
+  opacity: 0;
+}
+#crew p:nth-child(1) {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+#crew p:nth-child(1) span {
+  margin-right: 10px;
+  color: hsl(0deg, 0%, 44%);
+}
+#crew .swiper {
+  height: 80vh;
+  width: 100%;
+}
+#crew .swiper div.swiper-pagination {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#crew .swiper div.swiper-pagination span.pagination {
+  background-color: hsl(0deg, 0%, 44%);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+#crew .swiper div.swiper-pagination span.pagination-active {
+  background-color: white;
+}
+#crew_person {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+  height: 100%;
+}
+#crew_person img {
+  max-width: 100%;
+  align-self: center;
+  max-height: 350px;
+  box-shadow: 0 -2 24px 2px red;
+}
+#crew_person_role {
+  font-size: 22px;
+  color: hsl(0deg, 0%, 76%);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+#crew_person_name {
+  font-size: 32px;
+}
+#crew.loaded {
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  #crew {
+    background-image: url("../../assets/crew/background-crew-desktop.jpg");
+    width: 100%;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 25vh 150px 0 150px;
+    text-align: left;
+    position: relative;
+  }
+  #crew .crew_container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 150px 0 150px;
+  }
+  #crew p:nth-child(1) {
+    font-size: 26px;
+  }
+  #crew p:nth-child(1) span {
+    margin-right: 10px;
+  }
+  #crew .swiper {
+    height: 70vh;
+    width: 100%;
+  }
+  #crew .swiper div.swiper-pagination {
+    bottom: 10%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  #crew .swiper div.swiper-pagination span.pagination {
+    background-color: hsl(0deg, 0%, 44%);
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+  }
+  #crew .swiper div.swiper-pagination span.pagination-active {
+    background-color: white;
+  }
+  #crew_person {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.4fr 1fr 1fr;
+    margin-top: 20px;
+    gap: 10px;
+    height: 100%;
+  }
+  #crew_person img {
+    align-self: flex-end;
+    max-width: 100%;
+    justify-self: center;
+    max-height: 100%;
+    box-shadow: 0 -2 24px 2px red;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 2;
+  }
+  #crew_person_role {
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    align-self: flex-end;
+  }
+  #crew_person_name {
+    font-size: 62px;
+  }
+  #crew_person_bio {
+    font-size: 22px;
+    font-weight: 300;
+    padding-right: 150px;
+  }
+}/*# sourceMappingURL=Crew.min.css.map */
